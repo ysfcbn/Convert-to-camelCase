@@ -15,10 +15,11 @@ delayedDeparture ✅✅✅✅✅
 
 document.body.append(document.createElement("textarea"));
 document.body.append(document.createElement("button"));
-document.querySelector("textarea").style.width = "500px";
-const enteredText = document.querySelector("textarea").textContent;
+document.body.append(document.createElement("button"));
 const btn = document.querySelector("button");
+const btn1 = document.getElementsByTagName("button")[1];
 btn.textContent = "Convert";
+btn1.textContent = "Clear";
 
 btn.addEventListener("click", function () {
 	let text = document.querySelector("textarea").value;
@@ -52,4 +53,7 @@ btn.addEventListener("click", function () {
 	}
 	console.log(valueArr.join("\n"));
 	document.querySelector("textarea").value = valueArr.join("\n");
+});
+btn1.addEventListener("click", function () {
+	document.querySelector("textarea").value = "";
 });
